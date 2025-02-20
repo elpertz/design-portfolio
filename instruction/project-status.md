@@ -16,8 +16,8 @@
   - ✅ `/lib` for utilities
   - ✅ `/public` for static assets
   - ✅ `/content` for case studies
-- [ ] Set up root layout.tsx
-- [ ] Create global styles
+- ✅ Set up ESLint and Prettier
+- ✅ Configure Git repository
 
 ## Component Development
 
