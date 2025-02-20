@@ -5,8 +5,8 @@
 - ✅ Create Next.js project with App Router
 - ✅ Install and configure TypeScript
 - ✅ Install and configure Tailwind CSS
-- [ ] Set up ESLint and Prettier
-- [ ] Configure Git repository
+- ✅ Set up ESLint and Prettier
+- ✅ Configure Git repository
 
 ## Core Structure
 
@@ -16,8 +16,8 @@
   - ✅ `/lib` for utilities
   - ✅ `/public` for static assets
   - ✅ `/content` for case studies
-- ✅ Set up ESLint and Prettier
-- ✅ Configure Git repository
+- [ ] Set up root layout.tsx
+- [ ] Create global styles
 
 ## Component Development
 

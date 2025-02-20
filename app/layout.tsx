@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Geist_Mono, Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
+import Header from '@/components/ui/header'
+import Footer from '@/components/ui/footer'
 
 const inter = Inter({
   variable: '--font-inter',
@@ -25,14 +27,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${inter.variable} ${geistMono.variable} flex min-h-dvh flex-col antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Header className="mx-auto w-full max-w-105" />
+          <main className="flex-grow">{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
