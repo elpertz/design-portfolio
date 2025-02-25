@@ -1,26 +1,29 @@
+// This indicates that this code runs on the client-side (browser), not server-side
 'use client'
 
-import * as React from 'react'
-import { Command as CommandPrimitive } from 'cmdk'
-import { SearchIcon } from 'lucide-react'
-
-import { cn } from '@/lib/utils'
+// Import necessary dependencies
+import * as React from 'react' // Core React library
+import { Command as CommandPrimitive } from 'cmdk' // Command menu library
+import { SearchIcon } from 'lucide-react' // Icon component
+import { cn } from '@/lib/utils' // Utility for combining class names
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle
-} from '@/components/ui/dialog'
+} from '@/components/ui/dialog' // Dialog/modal components
 
+// Command component - The main wrapper for the command menu
 function Command({
-  className,
-  ...props
+  className, // Optional CSS classes
+  ...props // Any other props passed to the component
 }: React.ComponentProps<typeof CommandPrimitive>) {
   return (
     <CommandPrimitive
       data-slot="command"
       className={cn(
+        // Base styles for the command menu
         'bg-popover text-popover-foreground flex h-full w-full flex-col overflow-hidden rounded-md',
         className
       )}
@@ -29,9 +32,10 @@ function Command({
   )
 }
 
+// CommandDialog component - A dialog/modal version of the command menu
 function CommandDialog({
-  title = 'Command Palette',
-  description = 'Search for a command to run...',
+  title = 'Command Palette', // Default title
+  description = 'Search for a command to run...', // Default description
   children,
   ...props
 }: React.ComponentProps<typeof Dialog> & {
@@ -41,6 +45,8 @@ function CommandDialog({
   return (
     <Dialog {...props}>
       <DialogHeader className="sr-only">
+        {' '}
+        {/* Hidden visually but available to screen readers */}
         <DialogTitle>{title}</DialogTitle>
         <DialogDescription>{description}</DialogDescription>
       </DialogHeader>
@@ -53,6 +59,7 @@ function CommandDialog({
   )
 }
 
+// CommandInput component - The search input field
 function CommandInput({
   className,
   ...props
@@ -75,6 +82,7 @@ function CommandInput({
   )
 }
 
+// CommandList component - Container for command items
 function CommandList({
   className,
   ...props
@@ -91,6 +99,7 @@ function CommandList({
   )
 }
 
+// CommandEmpty component - Shown when no results are found
 function CommandEmpty({
   ...props
 }: React.ComponentProps<typeof CommandPrimitive.Empty>) {
@@ -103,6 +112,7 @@ function CommandEmpty({
   )
 }
 
+// CommandGroup component - Groups related command items
 function CommandGroup({
   className,
   ...props
@@ -119,6 +129,7 @@ function CommandGroup({
   )
 }
 
+// CommandSeparator component - Visual divider between groups
 function CommandSeparator({
   className,
   ...props
@@ -132,6 +143,7 @@ function CommandSeparator({
   )
 }
 
+// CommandItem component - Individual selectable command item
 function CommandItem({
   className,
   ...props
@@ -148,6 +160,7 @@ function CommandItem({
   )
 }
 
+// CommandShortcut component - Displays keyboard shortcuts
 function CommandShortcut({
   className,
   ...props
@@ -164,6 +177,7 @@ function CommandShortcut({
   )
 }
 
+// Export all components for use in other files
 export {
   Command,
   CommandDialog,

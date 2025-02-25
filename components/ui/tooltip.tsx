@@ -5,12 +5,23 @@ import * as TooltipPrimitive from '@radix-ui/react-tooltip'
 
 import { cn } from '@/lib/utils'
 
+// TooltipProvider wraps all tooltip instances
 const TooltipProvider = TooltipPrimitive.Provider
 
-const Tooltip = TooltipPrimitive.Root
+// Tooltip is the root component that manages state
+// Setting delayDuration to 0 removes the delay
+const Tooltip = ({
+  delayDuration = 1,
+  ...props
+}: TooltipPrimitive.TooltipProps) => (
+  <TooltipPrimitive.Root delayDuration={delayDuration} {...props} />
+)
 
+// TooltipTrigger is the element that triggers the tooltip on hover
 const TooltipTrigger = TooltipPrimitive.Trigger
 
+// TooltipContent renders the actual tooltip bubble with styling
+// It uses a Portal to render outside the DOM hierarchy
 const TooltipContent = React.forwardRef<
   React.ElementRef<typeof TooltipPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>

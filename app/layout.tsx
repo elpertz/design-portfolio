@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${geistMono.variable} flex min-h-dvh flex-col antialiased`}
+        className={`${inter.variable} ${geistMono.variable} dark:selection:text-zin0- flex min-h-dvh flex-col bg-[radial-gradient(55.74%_125.26%_at_50%_18.35%,#FFF_0%,#FAFAFA_79.1%,#F7F7F7_100%)] px-5 antialiased selection:bg-zinc-300/80 selection:text-zinc-800 dark:selection:bg-neutral-700/80 dark:selection:text-neutral-200`}
       >
         <ThemeProvider
           attribute="class"
@@ -36,8 +36,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header className="mx-auto w-full max-w-105" />
-          <main className="flex-grow">{children}</main>
+          <Header className="mx-auto mt-4 mb-4 w-full max-w-md md:mb-6" />
+          <main className="grow">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

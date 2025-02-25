@@ -25,9 +25,13 @@
 ## 2. **File Architecture**
 
 1. **Recommended Folder Structure**
-   - **Action**: Create directories:  
-      ``` Design-portfolio/ ├─ .gitignore ├─ package.json ├─ tsconfig.json ├─
+   - **Action**: Create directories:
+     ```Design-portfolio/ ├─ .gitignore ├─ package.json ├─ tsconfig.json ├─
      next.config.js ├─ tailwind.config.js ├─ postcss.config.js ├─ README.md
+     ```
+
+my-portfolio/ ├─ .gitignore ├─ package.json ├─ tsconfig.json ├─ next.config.js
+├─ tailwind.config.js ├─ postcss.config.js ├─ README.md
 
 ├─ public/ │ └─ images/ │ └─ logo.png # Example image asset
 
@@ -37,9 +41,9 @@ MDX files │ ├─ getCaseStudyBySlug.ts # Example utility to get a single MDX
 slug │ └─ utils.ts # General helper functions
 
 ├─ components/ │ ├─ Header.tsx # Header / navbar │ ├─ Footer.tsx # Footer │ ├─
-ThemeToggle.tsx # Dark/light mode toggle │ ├─ PlaygroundCard.tsx # to show
-personal projects card component │ ├─ CaseStudyCard.tsx # A specialized card for
-case studies │ └─ ui/...
+ThemeToggle.tsx # Dark/light mode toggle │ ├─ Card.tsx # Generic card component
+│ ├─ CaseStudyCard.tsx # A specialized card for case studies │ └─ ...other UI
+components...
 
 └─ app/ ├─ globals.css # Tailwind & global styles ├─ layout.tsx # Root layout
 (wraps the entire app) ├─ not-found.tsx # Custom 404/NotFound page (optional)
@@ -52,7 +56,7 @@ Work/Portfolio index page │ ├─ playground/ │ │ └─ page.tsx # Playg
 │ ├─ case-studies/ │ │ ├─ page.tsx # All case studies listing page │ │ └─
 [slug]/ │ │ └─ page.tsx # Individual case study detail page (dynamic route)
 
-└─ ...other potential route groups or pages... ```
+└─ ...other potential route groups or pages...
 
 - **Why**: Keeping components, utilities, and content separate ensures better
   organization and maintainability.

@@ -42,6 +42,11 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
+
+  --text-title-size: 2.5rem;
+  --text-title-weight: 500;
+  --text-title-line-height: 1;
+  --text-title-letter-spacing: -0.075rem;
 }
 
 /*
@@ -60,17 +65,46 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
+  h1 {
+    font-size: var(--text-4xl);
+    font-weight: 400;
+    line-height: 1.28;
+    letter-spacing: -0.0345rem;
+  }
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: 400;
+    line-height: 1.28;
+    letter-spacing: -0.0245rem;
+  }
+  p {
+    font-size: var(--text-base);
+    font-weight: 400;
+    line-height: 1.56;
+    letter-spacing: -0.013rem;
+    padding-bottom: 0.5rem;
+  }
 }
 
 @layer utilities {
   body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .text-title {
+    font-size: var(--text-title-size);
+    font-weight: var(--text-title-weight);
+    line-height: var(--text-title-line-height);
+    letter-spacing: var(--text-title-letter-spacing);
+    font-style: normal;
+    text-edge: cap;
+    leading-trim: both;
   }
 }
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0 0% 99%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
@@ -108,7 +142,7 @@
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted-foreground: 0 0% 77%;
     --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
@@ -130,6 +164,15 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Add these styles to ensure proper dialog rendering */
+  [data-slot='dialog-overlay'] {
+    @apply z-40; /* Lower z-index for overlay */
+  }
+
+  [data-slot='dialog-content'] {
+    @apply pointer-events-auto z-50; /* Higher z-index for content and ensure clicks work */
   }
 }
 
@@ -174,5 +217,24 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@theme {
+  --animate-wiggle: wiggle 1s ease-in-out infinite;
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+}
+
+@layer base {
+  .animate-wiggle {
+    animation: var(--animate-wiggle);
   }
 }
