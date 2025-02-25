@@ -11,47 +11,23 @@ interface ProjectCardProps {
   title: string
   category: string
   href: string
-  diamond?: boolean
 }
 
-const ProjectCard = ({
-  image,
-  title,
-  category,
-  href,
-  diamond = false
-}: ProjectCardProps) => {
+const ProjectCard = ({ image, title, category, href }: ProjectCardProps) => {
   return (
     <Link
       href={href}
-      className="group block transform rounded-lg text-start transition-all duration-200 ease-out hover:-translate-y-1 hover:bg-gray-100/50"
+      className="group block transform rounded-[18px] p-1 text-start transition-all duration-200 ease-out hover:-translate-y-1 hover:bg-gray-100"
     >
-      <div
-        className="relative aspect-[6/7] overflow-hidden rounded-2xl bg-gray-100"
-        style={{
-          boxShadow:
-            '0px 4px 6px 0px rgba(0, 0, 0, 0.02) inset, 0px -3px 3px 1px rgba(255, 255, 255, 0.72)',
-          border: '1px solid rgba(231, 231, 233, 0.39)'
-        }}
-      >
-        {diamond ? (
-          <div className="flex h-full items-center justify-center bg-black p-6">
-            <Image
-              src={image}
-              alt={title}
-              width={300}
-              height={300}
-              className="object-contain"
-            />
-          </div>
-        ) : (
-          <Image
-            src={image}
-            alt={title}
-            fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-        )}
+      <div className="relative aspect-[6/7] overflow-hidden rounded-2xl border border-gray-100 bg-gray-100 shadow-[0px_4px_6px_0px_rgba(0,0,0,0.02)_inset,_0px_-3px_3px_1px_rgba(255,255,255,0.72)] group-hover:bg-indigo-500/80">
+        <Image
+          src={image}
+          alt={title}
+          width={1600}
+          height={900}
+          sizes="w-[31.5rem] h-[18rem]"
+          className="absolute -right-40 -bottom-4 scale-200 rounded-md border-2 border-white object-cover shadow-lg transition-all duration-800 ease-out group-hover:-bottom-1 group-hover:scale-205"
+        />
       </div>
       <div className="mt-3 flex flex-col gap-1 px-3">
         <h3>{title}</h3>
@@ -85,7 +61,6 @@ const ProjectGrid = () => {
         title="UI exploration and gems 💎"
         category="Playground"
         href="/case-studies/ui-exploration"
-        diamond={true}
       />
     </div>
   )
