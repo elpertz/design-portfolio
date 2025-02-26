@@ -54,9 +54,7 @@ export default function Header({ className }: { className?: string }) {
             onClick={() => setOpen(true)}
             className="flex translate-x-1 items-center gap-1 rounded-md px-1 py-1 transition-colors duration-150 ease-out hover:scale-98 hover:cursor-pointer hover:bg-gray-100"
           >
-            <Link href="/">
-              <PertzWithDesign />
-            </Link>
+            <PertzWithDesign />
 
             <kbd
               className={`bg-muted text-muted-foreground pointer-events-none inline-flex h-5 items-center gap-0.5 rounded border px-1 font-mono text-xs font-medium opacity-100 transition-transform select-none ${isPressed ? 'scale-85' : ''}`}

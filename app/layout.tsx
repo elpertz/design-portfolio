@@ -28,11 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${geistMono.variable} dark:selection:text-zin0- flex min-h-dvh flex-col bg-[radial-gradient(55.74%_125.26%_at_50%_18.35%,#FFF_0%,#FAFAFA_79.1%,#F7F7F7_100%)] px-5 antialiased selection:bg-zinc-300/80 selection:text-zinc-800 dark:selection:bg-neutral-700/80 dark:selection:text-neutral-200`}
+        className={`${inter.variable} ${geistMono.variable} dark:selection:text-zin0- flex min-h-dvh flex-col px-5 antialiased selection:bg-zinc-300/80 selection:text-zinc-800 dark:selection:bg-neutral-700/80 dark:selection:text-neutral-200`}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >

@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import ThemeToggle from './theme-toggle'
 
 /**
  * Footer component
@@ -35,6 +36,8 @@ export default function Footer({ className }: { className?: string }) {
             X
           </Link>
         </div>
+
+        <ThemeToggle />
 
         <div className="text-sm text-zinc-500">Created with mucho love ❤️</div>
       </div>

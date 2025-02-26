@@ -1,10 +1,12 @@
 import React from 'react'
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 import {
   DownloadIcon,
   LinkedinIcon,
   MessageCircle,
-  MessageCircleIcon
+  MessageCircleIcon,
+  Sparkles
 } from 'lucide-react'
 import { Pertz } from '@/components/pertz'
 import {
@@ -29,16 +31,18 @@ export default function Home() {
         </h1>
 
         <p className="text-muted-foreground max-w-[40ch] text-pretty">
-          👋 Hey there! I'm Sebastian, also known as Pertz, a designer from
-          Bogotá who helps tech companies build kick-ass digital products.
+          👋 Hey there! I'm Sebastian, also known as Pertz, a designer from
+          Bogotá who helps tech companies build kick-ass digital products.
         </p>
 
-        <div>
+        <div className="flex space-x-4">
           <Button variant="default">
-            <span>
-              <MessageCircle />
-            </span>{' '}
-            REACH OUT
+            <MessageCircle className="mr-2 h-4 w-4" /> REACH OUT
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="/playground">
+              <Sparkles className="mr-2 h-4 w-4" /> PLAYGROUND
+            </Link>
           </Button>
         </div>
       </section>
